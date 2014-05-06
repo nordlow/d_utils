@@ -1,7 +1,7 @@
-_dmd_command_options="$(dmd --help 2>&1 | sed -n 's/^\s*\(-\+\w*\).*/\1/p' | sed 's/filename\|docdir\|directory\|path\|linkerflag\|objdir//g' | sort -u)"
+_dmd_command_options="$(dmd --help 2>&1 | sed -n 's/^\s*\(-\+\w*\).*/\1/p' | sed 's/filename\|docdir\|directory\|path\|linkerflag\|objdir//g' | sort -u) --c --b --f --r --x --y"
 
 # TODO: Add support undocumented flags
-# for -O --c, --b, --f, --r, --x, --y
+# for -O
 _dmd()
 {
     local cur opts
