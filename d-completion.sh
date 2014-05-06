@@ -1,7 +1,15 @@
 _dmd_command_options="$(dmd --help 2>&1 | sed -n 's/^\s*\(-\+\w*\).*/\1/p' | sed 's/filename\|docdir\|directory\|path\|linkerflag\|objdir//g' | sort -u) --c --b --f --r --x --y"
 
-# TODO: Add support undocumented flags
-# for -O
+# f you compile dmd with debug on, and compile with:
+# -O --c
+# you'll get reports of the various optimizations done.
+# Other useful undocumented flags:
+#  --b  show block optimisation
+#  --f  full output
+#  --r  show register allocation
+#  --x  suppress predefined C++ stuff
+#  --y  show output to Intermediate Language (IL) buffer
+
 _dmd()
 {
     local cur opts
